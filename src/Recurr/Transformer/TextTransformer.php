@@ -246,8 +246,9 @@ class TextTransformer
     protected function addByDay(Rule $rule)
     {
         $byDay = $rule->getByDay();
-
+        $bySetPos = $rule->getBySetPosition();
         $this->addFragment($this->translator->trans('on'));
+        $this->addFragment($bySetPos[0].' ');
         $this->addFragment($this->getByDayAsText($byDay));
     }
 
